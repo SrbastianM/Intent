@@ -11,5 +11,8 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         showTextView = findViewById(R.id.textView)
 
+        var userName : String = intent.getStringExtra("username").toString()
+        var userLikes : String = intent.getStringExtra("userlikes").toString()
+        showTextView.text = "Your name is ${userName} and here are your likes ${userLikes}"
     }
 }

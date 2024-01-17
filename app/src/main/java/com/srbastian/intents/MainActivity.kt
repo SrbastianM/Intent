@@ -1,5 +1,6 @@
 package com.srbastian.intents
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,6 +25,14 @@ class MainActivity : AppCompatActivity() {
 
         send.setOnClickListener {
 
+            var userName : String = name.text.toString()
+            var userLikes : String = like.text.toString()
+
+            var intent = Intent(this@MainActivity, SecondActivity:: class.java)
+            intent.putExtra("username", userName)
+            intent.putExtra("userlikes", userLikes)
+
+            startActivity(intent)
         }
     }
 }
